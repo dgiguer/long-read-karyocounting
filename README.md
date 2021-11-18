@@ -1,5 +1,7 @@
 # Estimating chromosomes in eukaryotic genomes
 
+[![DOI](https://zenodo.org/badge/419751237.svg)](https://zenodo.org/badge/latestdoi/419751237)
+
 Here is a poster I presented about this workflow Nov 2021 in London, Ontario.
 
 ![poster](poster_final.png)
