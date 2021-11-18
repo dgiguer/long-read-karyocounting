@@ -1,5 +1,9 @@
 # Estimating chromosomes in eukaryotic genomes
 
+Here is a poster I presented about this workflow Nov 2021 in London, Ontario.
+
+![poster](poster_final.png)
+
 Below is a general workflow from raw reads to network analysis using previously developed tools. 
 
 Other software used: [seqtk](https://github.com/lh3/seqtk), [minimap2](https://github.com/lh3/minimap2), [iGraph](https://igraph.org/r/)
