@@ -26,8 +26,15 @@ Dependencies need to be available in your path: [seqtk](https://github.com/lh3/s
 
 3) Run your own analysis on your own dataset. 
 
+Vanilla: 
+
 ```
-nextflow 
+nextflow run dgiguer/long-read-karyocounting --reads /path/to/reads  
+```
+
+After a :coffee: :
+```
+nextflow run dgiguer/long-read-karyocounting  --reads /path/to/reads --threads 12 --minimumReadLength 50000 --queryCoverage 
 ```
 
 ### What this pipeline can and can't do
