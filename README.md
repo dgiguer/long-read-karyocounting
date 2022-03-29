@@ -1,4 +1,4 @@
-# Long read karyocounting
+<p align="center"><img src="images/logo.png" alt="Karyocounter" width="70%"></p>
 
 ### Introduction
 
