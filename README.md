@@ -1,30 +1,24 @@
 <p align="center"><img src="images/logo_transparent.png" alt="Karyocounter" width="80%"></p>
 
-### Introduction
-
 [![DOI](https://zenodo.org/badge/419751237.svg)](https://zenodo.org/badge/latestdoi/419751237)
 
-Long read karyocounting is a bioinformatic pipeline provided in Nextflow that determines the number of chromosomes in eukaryotic organisms using only long reads. 
+Karyocounter is a Nextflow pipeline to determine the number of nuclear chromosomes in eukaryotic organisms using only nanopore reads. 
 
-Dependencies need to be available in your path: [seqtk](https://github.com/lh3/seqtk), [minimap2](https://github.com/lh3/minimap2), [iGraph](https://igraph.org/r/) within a currently installed R environment.
-
-### Pipeline summary
+### How it works
 
 1) Long reads are filtered to retain only telomere-containing reads above a certain read length. 
 
 2) Reads are aligned in all-vs-all mode with minimap2 and filtered to retain only full length alignments. 
 
-3) Network graphs are generated where each represent sub-graph represents a single chromosomes. 
+3) A network graph of the overlaps is generated where each represent cluster represents the end of a single chromosome. 
 
-4) The number of chromosomes are enumerated and interpreted according to the biology of the organism sequenced (diploid, haploid, special cases, etc...)
+4) The number of chromosomes can then be counted and interpreted according to the biology of the organism (diploid, haploid, special cases, etc...). 
 
-### Instructions 
+### Quick start 
 
-1) Install [Nextflow](https://www.nextflow.io/) and ensure all dependencies are available in your path. 
+1) Install [Nextflow](https://www.nextflow.io/) and ensure the following dependencies are available in your path: [seqtk](https://github.com/lh3/seqtk), [minimap2](https://github.com/lh3/minimap2), the R programming language with [iGraph](https://igraph.org/r/) installed.
 
-2) Download the pipeline and test it on a minimal data set. 
-
-3) Run your own analysis on your own dataset. 
+2) Run the Nextflow pipeline. 
 
 Vanilla: 
 
