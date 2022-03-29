@@ -1,4 +1,4 @@
-<p align="center"><img src="images/logo.png" alt="Karyocounter" width="70%"></p>
+<p align="center"><img src="images/logo_transparent.png" alt="Karyocounter" width="80%"></p>
 
 ### Introduction
 
