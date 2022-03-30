@@ -26,7 +26,7 @@ Easy mode:
 nextflow run dgiguer/long-read-karyocounting --reads /path/to/reads  
 ```
 
-After a :coffee: and reading the paramters section:
+After a :coffee: and reading the parameters section:
 ```
 nextflow run dgiguer/long-read-karyocounting  --reads /path/to/reads --threads 12 --minimumReadLength 50000 --queryCoverage '0.95' --telomere "AACCCT" --dir karyocounting_results
 ```
