@@ -6,18 +6,37 @@ params.dir = "$baseDir/lrk_output/"
 params.minimumReadLength = 5000
 params.threads = 4
 params.queryCoverage = '0.95'
+params.telomere = "AACCCT"
+
+
+process telomereComplement {
+
+    output:
+    tuple env(telo_1), env(telo_2) into telomeres_ch
+
+    shell:
+    '''
+    telo_1="$(echo !{params.telomere})"
+    telo_2="$(echo !{params.telomere} | tr ACGTacgt TGCAtgca | rev)"
+    '''
+
+}
 
 process processReads {
 
     input:
     path 'input.fastq.gz' from params.reads 
+    tuple env(telo_1), env(telo_2) from telomeres_ch
 
     output:
     file 'filtered_reads' into reads_ch
+ 
+    shell:
+    '''
+    echo !{params.minimumReadLength}
+    seqtk seq -L !{params.minimumReadLength} input.fastq.gz | grep -A 2 -B 1 -E "${telo_1}${telo_1}${telo_1}|${telo_2}${telo_2}${telo_2}" - | grep -v -- '^--\$' > filtered_reads
+    '''
 
-    """
-    seqtk seq -L $params.minimumReadLength input.fastq.gz | grep -A 2 -B 1 -E "AACCCTAACCCTAACCCT|AGGGTTAGGGTTAGGGTT" - | grep -v -- "^--\$" > filtered_reads
-    """
 }
 
 process makeOverlaps {
