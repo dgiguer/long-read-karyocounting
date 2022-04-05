@@ -33,7 +33,6 @@ process processReads {
  
     shell:
     '''
-    echo !{params.minimumReadLength}
     seqtk seq -L !{params.minimumReadLength} input.fastq.gz | grep -A 2 -B 1 -E "${telo_1}${telo_1}${telo_1}|${telo_2}${telo_2}${telo_2}" - | grep -v -- '^--\$' > filtered_reads
     '''
 
