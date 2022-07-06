@@ -35,7 +35,7 @@ nextflow run dgiguer/long-read-karyocounting -r main --reads /path/to/reads \
 
 ### Parameters
 
-Reducing the number of reads used as possible will improve speed (minimum 50-75X coverage). This is very dependent on the read N50 obtained during sequencing. The output will be saved in your current working directory as `lrk_output`
+Reducing the number of reads used as much as possible will improve speed (minimum 50-75X coverage). This is very dependent on the read N50 obtained during sequencing. The output will be saved in your current working directory as `lrk_output`
 
 - `--reads`: absolute path to file containg long read (.fastq.gz, .fastq).  
 - `--threads`: number of threads to use. Integer, default: 4.   
